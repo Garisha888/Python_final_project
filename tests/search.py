@@ -15,7 +15,7 @@ class TestSearch(baseTest):
         homepage = HomePage(self.driver,self.wait)
         searchpage = SearchPage(self.driver,self.wait)
         homepage.search("honda")
-        time.sleep(5)
+        # time.sleep(5)
         searchpage.textforinvalidsearch()
 
     def test_loginvalidsearch(self):
@@ -24,7 +24,7 @@ class TestSearch(baseTest):
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com", "passdemO1")
         homepage.search("flower")
-        time.sleep(5)
+        # time.sleep(5)
 
     def test_logininvalidsearch(self):
         homepage = HomePage(self.driver,self.wait)
@@ -33,5 +33,5 @@ class TestSearch(baseTest):
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com", "passdemO1")
         homepage.search("honda")
-        time.sleep(5)
+        # time.sleep(5)
         searchpage.textforinvalidsearch()
