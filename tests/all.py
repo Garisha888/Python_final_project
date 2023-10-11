@@ -11,11 +11,11 @@ class TestAll(baseTest):
 
 
     def test_all(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
-        searchpage = SearchPage(self.driver)
-        addincart= AddToCart(self.driver)
-        checkoutpage=Checkout(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
+        searchpage = SearchPage(self.driver,self.wait)
+        addincart= AddToCart(self.driver,self.wait)
+        checkoutpage=Checkout(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com","passdemO1")
         time.sleep(1)

@@ -9,8 +9,8 @@ class TestLogin(baseTest):
 
 
     def test_validlogin1(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com","passdemO1")
 
@@ -23,34 +23,34 @@ class TestLogin(baseTest):
         # time.sleep(10)
 
     def test_invalidlogin2(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
+        homepage = HomePage(self.driver, self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com","hiii")
         loginpage.invalidlogintext()
 
 
     def test_login3(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("","")
 
     def test_login4(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com","")
 
     def test_login5(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("xxxxxxx","")
 
     def test_validlogin4(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("","hiiiii")
 

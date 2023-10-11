@@ -11,9 +11,9 @@ class TestCart(baseTest):
 
 
     def test_cart(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
-        addincart= AddToCart(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
+        addincart= AddToCart(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com","passdemO1")
         # time.sleep(2)

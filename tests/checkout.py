@@ -11,18 +11,18 @@ class TestAll(baseTest):
 
 
     def test_all(self):
-        homepage = HomePage(self.driver)
-        loginpage = LoginPage(self.driver)
-        checkoutpage=Checkout(self.driver)
+        homepage = HomePage(self.driver,self.wait)
+        loginpage = LoginPage(self.driver,self.wait)
+        checkoutpage=Checkout(self.driver,self.wait)
         homepage.loginclick()
         loginpage.login("demoacc@gmail.com","passdemO1")
         time.sleep(1)
         homepage.gotocart()
         checkoutpage.checkout_click()
         checkoutpage.checkout_product_list()
-        checkoutpage.fill_new_checkout_address("demo", "demoacc@gmail.com", 9840000000, "Sanepa" )
+        # checkoutpage.fill_new_checkout_address("demo", "demoacc@gmail.com", 9840000000, "Sanepa" )
         time.sleep(2)
-        # checkoutpage.delete_checkout_address()
+        checkoutpage.delete_checkout_address()
         checkoutpage.selectaddress()
         time.sleep(2)
         checkoutpage.finalcheckout()

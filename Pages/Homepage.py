@@ -1,25 +1,28 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
 
 
 class HomePage:
 
-    def __init__(self, driver):
+    def __init__(self, driver,wait):
         self.driver = driver
+        self.wait = wait
 
     def loginclick(self):
-        loginbutton = self.driver.find_element(By.XPATH,"//a[@class='user-access profile-link register']")
+        loginbutton =  self.wait.until(EC.element_to_be_clickable((By.XPATH,"//a[@class='user-access profile-link register']")))
         loginbutton.click()
 
     def search(self, searchkey):
-        clicksearch = self.driver.find_element(By.XPATH, "//input[@type='text']")
+        clicksearch =  self.wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@type='text']")))
         clicksearch.click()
         clicksearch.clear()
         clicksearch.send_keys(searchkey)
-        presssearch = self.driver.find_element(By.XPATH, "//button[@type='submit']")
+        presssearch =  self.wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@type='submit']")))
         presssearch.click()
 
     def gotocart(self):
-        clickcartbutton = self.driver.find_element(By.XPATH, "//li[@class='dropdown cart-dropdown']")
+        clickcartbutton =  self.wait.until(EC.element_to_be_clickable((By.XPATH, "//li[@class='dropdown cart-dropdown']")))
         clickcartbutton.click()
 
 # def deletefromcart(self):
